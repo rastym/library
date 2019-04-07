@@ -1,47 +1,80 @@
-window.onload = function(){
-
-    var services = document.querySelector('.services');
-    services.addEventListener('click',handler)
-
-    function handler(e){
-    var target = e.target;
-    var nextElement = target.parentElement.nextElementSibling;
-    if(target.classList.contains('services-item-img')){
-        nextElement.style.display = "block";
-        var overlay = nextElement.querySelector('.overlay');
-        var galleryId = nextElement.querySelector('ul').getAttribute("id");
-        $("#" + galleryId).lightSlider({
-            gallery:true,
-            item:1,
-            loop:true,
-            thumbItem:9,
-            slideMargin:0,
-            enableDrag: false,
-            currentPagerPosition:'left',
-            pager: false,
-            auto:true,
-            pause: 3000,
-            speed: 2000,
-            mode: "fade",
-       
-        })
-
-        overlay.onclick = function(){
-            this.parentElement.style.display ="none";
-        }    
-    }
-    }
-
-    var phone = document.querySelector('.phone');
-
-    phone.addEventListener('click',handler2)
-    function handler2(e){
-        var target = e.target;
-        if(target.tagName == "A"){
-            e.preventDefault()
-            let a = this.querySelectorAll('a');
-            a.forEach(element =>  element.parentElement.innerHTML = element.parentElement.dataset.number );        
+(function($) {
+  $.fn.menumaker = function(options) {
+    var cssmenu = $(this),
+      settings = $.extend(
+        {
+          format: "dropdown",
+          sticky: false
+        },
+        options
+      );
+    return this.each(function() {
+      $(this)
+        .find(".button")
+        .on("click", function() {
+          $(this).toggleClass("menu-opened");
+          var mainmenu = $(this).next("ul");
+          if (mainmenu.hasClass("open")) {
+            mainmenu.slideToggle().removeClass("open");
+          } else {
+            mainmenu.slideToggle().addClass("open");
+            if (settings.format === "dropdown") {
+              mainmenu.find("ul").show();
+            }
+          }
+        });
+      cssmenu
+        .find("li ul")
+        .parent()
+        .addClass("has-sub");
+      multiTg = function() {
+        cssmenu
+          .find(".has-sub")
+          .prepend('<span class="submenu-button"></span>');
+        cssmenu.find(".submenu-button").on("click", function() {
+          $(this).toggleClass("submenu-opened");
+          if (
+            $(this)
+              .siblings("ul")
+              .hasClass("open")
+          ) {
+            $(this)
+              .siblings("ul")
+              .removeClass("open")
+              .slideToggle();
+          } else {
+            $(this)
+              .siblings("ul")
+              .addClass("open")
+              .slideToggle();
+          }
+        });
+      };
+      if (settings.format === "multitoggle") multiTg();
+      else cssmenu.addClass("dropdown");
+      if (settings.sticky === true) cssmenu.css("position", "fixed");
+      resizeFix = function() {
+        var mediasize = 1000;
+        if ($(window).width() > mediasize) {
+          cssmenu.find("ul").show();
         }
-    }
+        if ($(window).width() <= mediasize) {
+          cssmenu
+            .find("ul")
+            .hide()
+            .removeClass("open");
+        }
+      };
+      resizeFix();
+      return $(window).on("resize", resizeFix);
+    });
+  };
+})(jQuery);
 
-}
+(function($) {
+  $(document).ready(function() {
+    $("#cssmenu").menumaker({
+      format: "multitoggle"
+    });
+  });
+})(jQuery);
