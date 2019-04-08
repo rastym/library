@@ -34,14 +34,31 @@ header {
   height: 100vh;
 }
 
+header .top_overlay {
+  position: relative;
+  z-index: 45;
+  padding-bottom: 5px;
+  margin-bottom: 3px;
+  background: rgba(34, 34, 34, 0.6);
+}
+
+header .bottom_overlay {
+  position: relative;
+  height: 100%;
+  z-index: 5;
+  padding-bottom: 5px;
+  background: rgba(34, 34, 34, 0.6);
+}
+
 header .library_name {
-  z-index: 44;
+  z-index: 4;
   padding: 35px 0;
+  font-size: 36px;
   text-align: center;
 }
 
 header .library_name h1 {
-  z-index: 44;
+  z-index: 4;
 }
 
 .logo {
@@ -60,7 +77,6 @@ header .library_name h1 {
 
 nav {
   position: relative;
-  width: 1170px;
   margin: 0 auto;
 }
 
@@ -101,7 +117,7 @@ nav {
 
 #cssmenu {
   font-family: sans-serif;
-  background: #333;
+  background: rgba(34, 34, 34, 0);
 }
 
 #cssmenu > ul > li {
