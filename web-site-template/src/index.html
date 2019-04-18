@@ -6,6 +6,8 @@
     <title>Grid</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/bg-slider.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css"/>
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
     <!--[if lte IE9]>
       <link rel="stylesheet" href="css/styles-ie.css" />
@@ -13,6 +15,19 @@
   </head>
   <body>
     <header>
+
+        <div class="slider" id="slider">
+            <div class="slItems">
+              <div class="slItem">
+              </div>
+              <div class="slItem">
+         
+              </div>
+              <div class="slItem">
+            
+              </div>
+            </div>
+          </div>
       <div class="top_overlay">
         <div class="library_name">
           <h1>Бібліотека НУХТ<h1>
@@ -153,49 +168,147 @@
         </nav>
       </div>
       <div class="bottom_overlay">
+          <h2>Вітаємо вас </h2>
       </div>
-
-      <ul class="slideshow">
-        <li>
-          <span>Image 01</span>
-          <!-- <div><h3>Бібліотека НУХТ</h3></div> -->
-        </li>
-        <li>
-          <span>Image 02</span>
-          <!-- <div><h3>Більше 1 500 000 примірників</h3></div> -->
-        </li>
-        <li>
-          <span>Image 03</span>
-          <!-- <div><h3>Повний спектр послуг</h3></div> -->
-        </li>
-        <li>
-          <span>Image 04</span>
-          <!-- <div><h3>Тест</h3></div> -->
-        </li>
-        <li>
-          <span>Image 04</span>
-          <!-- <div><h3>Тест</h3></div> -->
-        </li>
-        <li>
-          <span>Image 04</span>
-          <!-- <div><h3>Тест</h3></div> -->
-        </li>
-      </ul>
 
       <!-- / #page -->
     </header>
+    
+    <main>
+      <section class="about">
+        <div class="wrapper">
+            <h2>Про нас</h2> 
+        <div class="about__items">
 
-    <main></main>
+          <div class="about__items__item">
+            <div class="item__image">
+              <img src="/img/left_1.png" alt="">
+            </div>
+            <div class="item__info">
+                <h4>Рандом інфа</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                   Ducimus quod quibusdam, corporis enim sed tempore cumque blanditiis repellat voluptates! Velit,
+                   placeat delectus hic exercitationem cum possimus minima temporibus est iure?
+                </p>
+            </div>
+          </div>
+
+          <div class="about__items__item">
+              <div class="item__image">
+                <img src="/img/left_2.png" alt="">
+              </div>
+              <div class="item__info">
+                  <h4>Рандом інфа</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Ducimus quod quibusdam, corporis enim sed tempore cumque blanditiis repellat voluptates! Velit,
+                     placeat delectus hic exercitationem cum possimus minima temporibus est iure?
+                  </p>
+              </div>
+            </div>
+
+            <div class="about__items__item">
+                <div class="item__image">
+                  <img src="/img/left_3.png" alt="">
+                </div>
+                <div class="item__info">
+                    <h4>Рандом інфа</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                       Ducimus quod quibusdam, corporis enim sed tempore cumque blanditiis repellat voluptates! Velit,
+                       placeat delectus hic exercitationem cum possimus minima temporibus est iure?
+                    </p>
+                </div>
+              </div>
+
+        </div>
+      </div>
+      </section>
+
+      <section class="news">
+            <div class="parallax-window" data-parallax="scroll" data-image-src="/img/old-books.png"></div>
+            <h2>Новини</h2>
+            <div class="content">
+              <div class="wrapper">
+                 
+                  <div class="owl-carousel owl-theme">
+                  
+                  <div class="news__item">
+                        
+                       <div class="news__image">
+                        <img src="./img/slider_image.jpg" alt="">
+                      </div>
+
+                      <div class="news__article">
+                        <h4>Рандомна новина</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                          Rem laudantium ratione magnam fugit at facilis alias pariatur 
+                          dignissimos aspernatur aperiam architecto est ipsum libero, 
+                          perspiciatis minima impedit aut nesciunt laborum.
+                        </p>
+                      </div>
+
+                      <div class="news__date">
+                        <span>29</span>
+                        <h5>Жовтня</h5>
+                      </div>
+                  </div>
+
+                  <div class="news__item">
+                        
+                        <div class="news__image">
+                         <img src="./img/slider_image2.jpg" alt="">
+                       </div>
+
+                       <div class="news__article">
+                         <h4>Рандомна новина</h4>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                           Rem laudantium ratione magnam fugit at facilis alias pariatur 
+                           dignissimos aspernatur aperiam architecto est ipsum libero, 
+                           perspiciatis minima impedit aut nesciunt laborum.
+                         </p>
+                       </div>
+
+                       <div class="news__date">
+                         <span class="date">29</span>
+                         <h5 class="month">Жовтня</h5>
+                       </div>
+                  </div>
+
+                  <div class="news__item">
+                        
+                          <div class="news__image">
+                           <img src="./img/slider_image3.jpg" alt="">
+                         </div>
+ 
+                         <div class="news__article">
+                           <h4>Рандомна новина</h4>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                             Rem laudantium ratione magnam fugit at facilis alias pariatur 
+                             dignissimos aspernatur aperiam architecto est ipsum libero, 
+                             perspiciatis minima impedit aut nesciunt laborum.
+                           </p>
+                         </div>
+ 
+                         <div class="news__date">
+                           <span>29</span>
+                           <h5>Жовтня</h5>
+                         </div>
+                  </div>
+                 
+              </div>
+            </div>
+          </div>  -->
+      </section>
+      <div class="xer">lorem</div>
+    </main>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
-    <!-- <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"
-      type="text/javascript"
-    ></script> -->
+    <script src="js/parallax.js"></script>
+    <script src="js/slider.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script src="js/scripts.js"></script>
   </body>
 </html>

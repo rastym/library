@@ -11,6 +11,9 @@ var settings = {
     fields: "30px" /* side fields */
   },
   breakPoints: {
+    lg: {
+      width: "1000px"
+    },
     md: {
       width: "992px"
     },

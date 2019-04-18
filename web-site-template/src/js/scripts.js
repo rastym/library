@@ -78,3 +78,36 @@
     });
   });
 })(jQuery);
+
+$("#slider").rbtSlider({
+  height: "100vh",
+
+  // displays dots pagination
+  dots: false,
+
+  // displayes arrows navigation
+  arrows: false,
+
+  // autoplay interval
+  // 3 = 3 seconds
+  auto: 5
+});
+
+$(".parallax-window").parallax({
+  imageSrc: "/img/old-books.png"
+});
+var owl = $(".owl-carousel").owlCarousel({
+  items: 1,
+  dots: true,
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 1
+    },
+    1000: {
+      items: 1
+    }
+  }
+});

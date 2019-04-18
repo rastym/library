@@ -17,6 +17,16 @@ h1 {
   text-transform: uppercase;
 }
 
+h2 {
+  color: #fff;
+  font: 300 50px/50px "Open Sans", sans-serif;
+}
+
+h4 {
+  font-size: 15px;
+  color: #777;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +40,7 @@ body {
 
 header {
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   height: 100vh;
 }
 
@@ -38,16 +48,27 @@ header .top_overlay {
   position: relative;
   z-index: 45;
   padding-bottom: 5px;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
   background: rgba(34, 34, 34, 0.6);
 }
 
 header .bottom_overlay {
   position: relative;
-  height: 100%;
+  min-height: 100%;
   z-index: 5;
   padding-bottom: 5px;
   background: rgba(34, 34, 34, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .bottom_overlay h2 {
+  margin-top: -148px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px #000000;
+  font-size: 60px;
 }
 
 header .library_name {
@@ -59,6 +80,7 @@ header .library_name {
 
 header .library_name h1 {
   z-index: 4;
+  text-shadow: 0px 3px 5px #000;
 }
 
 .logo {
@@ -131,6 +153,7 @@ nav {
   text-decoration: none;
   color: #fff;
   font-weight: 700;
+  text-shadow: 0px 3px 5px #000;
 }
 
 #cssmenu > ul > li:hover > a,
@@ -272,9 +295,118 @@ nav {
   border-top: 1px solid #333;
 }
 
+.xer {
+  height: 500px;
+}
+
+/* MAIN --------------------------------------------------- */
+
+main .about {
+  background: #fff;
+  overflow: auto;
+  padding: 40px 0 120px;
+}
+
+main .about h2 {
+  color: #000;
+  margin: 80px 0 35px 0;
+  text-align: center;
+  font: 300 50px/50px "Open Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+main .about__items__item {
+  display: flex;
+  margin: 45px 0;
+}
+
+main .about__items__item .item__image {
+  width: 170px;
+}
+
+main .about__items__item .item__info {
+  margin-left: 5px;
+}
+
+main .about__items__item .item__info h4 {
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+main .about__items__item .item__info p {
+  font-size: 15px;
+  font-family: sans-serif;
+  color: #777;
+  margin-top: 5px;
+  line-height: 20px;
+}
+
+main .news {
+  position: relative;
+  height: 450px;
+  overflow: auto;
+}
+
+main .news .parallax-window {
+  background: transparent;
+  max-height: 450px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main .news h2 {
+  text-align: center;
+  position: relative;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+main .news .content {
+  max-height: 450px;
+}
+
+main .news .content .owl-carousel .news__item {
+  display: flex;
+  flex: wrap;
+  align-items: center;
+  padding: 24px 52px 23px 30px;
+  background: #fff;
+  height: 170px;
+}
+
+main .news .content .owl-carousel .news__item .news__image {
+  margin: 0 40px 0 20px;
+  flex-basis: 150px;
+}
+
+main .news .content .owl-carousel .news__item .news__image img {
+  max-height: 130px;
+  max-width: 130px;
+}
+
+main .news .content .owl-carousel .news__item .news__article {
+  flex-basis: 700px;
+  border-right: 1px solid #444;
+}
+
+main .news .content .owl-carousel .news__item .news__date {
+  flex-basis: 140px;
+  text-align: center;
+}
+
 @media screen and (max-width: 1000px) {
+  .wrapper {
+    padding-left: undefined;
+    padding-right: undefined;
+  }
+
   #cssmenu .main-menu {
     display: block;
+    background: #333;
   }
 
   .logo {
@@ -531,6 +663,66 @@ nav {
   .wrapper {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  main .about h2 {
+    font: 300 40px/40px "Open Sans", sans-serif;
+  }
+
+  main .about__items__item {
+    display: block;
+  }
+
+  main .about__items__item .item__image {
+    width: auto;
+    text-align: center;
+  }
+
+  main .about__items__item .item__info h4 {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  main .news {
+    height: 550px;
+  }
+
+  main .news .parallax-window {
+    max-height: none;
+  }
+
+  main .news h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  main .news .content .owl-carousel .news__item {
+    display: block;
+    height: auto;
+    padding: 15px;
+  }
+
+  main .news .content .owl-carousel .news__item .news__image {
+    margin: 0;
+    flex-basis: 0;
+    text-align: center;
+  }
+
+  main .news .content .owl-carousel .news__item .news__image img {
+    margin: 0 auto;
+  }
+
+  main .news .content .owl-carousel .news__item .news__article {
+    border-right: none;
+  }
+
+  main .news .content .owl-carousel .news__item .news__article h4 {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  main .news .content .owl-carousel .news__item .news__article p {
+    margin-bottom: 15px;
   }
 }
 

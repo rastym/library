@@ -21,7 +21,17 @@ h1 {
   text-transform: uppercase;
 }
 
-//HEADER
+h2 {
+  color: #fff;
+  font: 300 50px/50px "Open Sans", sans-serif;
+}
+
+h4 {
+  font-size: 15px;
+  color: #777;
+}
+
+////////////////////////////////////////HEADER/////////////////////////
 * {
   margin: 0;
   padding: 0;
@@ -33,23 +43,34 @@ body {
 }
 header {
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   height: 100vh;
 
   & .top_overlay {
     position: relative;
     z-index: 45;
     padding-bottom: 5px;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     background: rgba(34, 34, 34, 0.6);
   }
 
-  & .bottom_overlay {
+  .bottom_overlay {
     position: relative;
-    height: 100%;
+    min-height: 100%;
     z-index: 5;
     padding-bottom: 5px;
     background: rgba(34, 34, 34, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & h2 {
+      margin-top: -148px;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px #000000;
+      font-size: 60px;
+    }
   }
 
   & .library_name {
@@ -60,6 +81,7 @@ header {
 
     & h1 {
       z-index: 4;
+      text-shadow: 0px 3px 5px #000;
     }
   }
 }
@@ -126,6 +148,7 @@ nav {
   text-decoration: none;
   color: #fff;
   font-weight: 700;
+  text-shadow: 0px 3px 5px #000;
 }
 #cssmenu > ul > li:hover > a,
 #cssmenu ul li.active a {
@@ -252,6 +275,7 @@ nav {
 @media screen and (max-width: 1000px) {
   #cssmenu .main-menu {
     display: block;
+    background: #333;
   }
   .logo {
     position: absolute;
@@ -452,5 +476,133 @@ nav {
   #cssmenu > ul > li.has-sub > ul > li.active > a,
   #cssmenu > ul ul > li.has-sub > ul > li.active > a {
     border-top: none;
+  }
+}
+
+.xer {
+  height: 500px;
+}
+/* MAIN --------------------------------------------------- */
+main {
+  & .about {
+    background: #fff;
+    overflow: auto;
+    padding: 40px 0 120px;
+
+    & h2 {
+      color: #000;
+      margin: 80px 0 35px 0;
+      text-align: center;
+      font: 300 50px/50px "Open Sans", sans-serif;
+      text-transform: uppercase;
+
+      .sm-block({font: 300 40px/40px "Open Sans", sans-serif;});
+    }
+
+    &__items {
+      &__item {
+        display: flex;
+        margin: 45px 0;
+        .sm-block({display: block;});
+
+        & .item__image {
+          width: 170px;
+          .sm-block({width: auto; text-align: center;});
+        }
+        & .item__info {
+          margin-left: 5px;
+          & h4 {
+            font-size: 15px;
+            color: #777;
+            margin-bottom: 5px;
+            .sm-block({text-align: center; margin: 10px 0;});
+          }
+
+          & p {
+            font-size: 15px;
+            font-family: sans-serif;
+            color: #777;
+            margin-top: 5px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+  & .news {
+    position: relative;
+    //PARALLAX
+    height: 450px;
+    overflow: auto;
+    .sm-block({height: 550px;});
+
+    .parallax-window {
+      background: transparent;
+      max-height: 450px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .sm-block({max-height: none});
+    }
+
+    h2 {
+      text-align: center;
+      position: relative;
+      margin-bottom: 50px;
+      margin-top: 40px;
+
+      .sm-block({margin-bottom: 20px; margin-top: 20px;});
+    }
+
+    & .content {
+      max-height: 450px;
+
+      & .owl-carousel {
+        & .news__item {
+          display: flex;
+          flex: wrap;
+          align-items: center;
+          padding: 24px 52px 23px 30px;
+          background: #fff;
+          height: 170px;
+
+          .sm-block({display: block; height: auto; padding: 15px;});
+
+          & .news__image {
+            margin: 0 40px 0 20px;
+            flex-basis: 150px;
+            .sm-block({margin: 0; flex-basis: 0; text-align: center;});
+            & img {
+              max-height: 130px;
+              max-width: 130px;
+              .sm-block({margin: 0 auto;});
+            }
+          }
+
+          & .news__article {
+            flex-basis: 700px;
+            border-right: 1px solid #444;
+
+            .sm-block({border-right: none});
+
+            & h4 {
+              .sm-block({text-align: center; margin: 10px 0;});
+            }
+
+            & p {
+              .sm-block({margin-bottom: 15px;});
+            }
+          }
+
+          & .news__date {
+            flex-basis: 140px;
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 }
