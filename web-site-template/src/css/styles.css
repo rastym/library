@@ -305,6 +305,8 @@ main .about {
   background: #fff;
   overflow: auto;
   padding: 40px 0 120px;
+  z-index: 40;
+  position: relative;
 }
 
 main .about h2 {
@@ -404,6 +406,10 @@ main .news .content .owl-carousel .news__item .news__date {
     padding-right: undefined;
   }
 
+  header {
+    overflow: inherit;
+  }
+
   #cssmenu .main-menu {
     display: block;
     background: #333;
@@ -430,6 +436,8 @@ main .news .content .owl-carousel .news__item .news__date {
 
   #cssmenu {
     width: 100%;
+    position: relative;
+    z-index: 999;
   }
 
   #cssmenu ul {

@@ -55,14 +55,12 @@
       if (settings.sticky === true) cssmenu.css("position", "fixed");
       resizeFix = function() {
         var mediasize = 1000;
-        if ($(window).width() > mediasize) {
+        var button = cssmenu.find(".button");
+        if (window.innerWidth > mediasize) {
           cssmenu.find("ul").show();
         }
-        if ($(window).width() <= mediasize) {
-          cssmenu
-            .find("ul")
-            .hide()
-            .removeClass("open");
+        if (window.innerWidth <= mediasize && !button.hasClass("menu-opened")) {
+          cssmenu.find("ul").hide();
         }
       };
       resizeFix();
@@ -111,3 +109,7 @@ var owl = $(".owl-carousel").owlCarousel({
     }
   }
 });
+
+window.onclick = function(e) {
+  console.log(e.target);
+};
