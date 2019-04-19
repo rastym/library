@@ -94,7 +94,7 @@ $("#slider").rbtSlider({
 $(".parallax-window").parallax({
   imageSrc: "/img/old-books.png"
 });
-var owl = $(".owl-carousel").owlCarousel({
+var owl = $(".owl-one").owlCarousel({
   items: 1,
   dots: true,
   responsive: {
@@ -107,9 +107,24 @@ var owl = $(".owl-carousel").owlCarousel({
     1000: {
       items: 1
     }
-  }
+  },
+  smartSpeed: 500
 });
 
-window.onclick = function(e) {
-  console.log(e.target);
-};
+// $("#carousel").owlCarousel({
+//   loop: true,
+//   margin: 10,
+//   nav: true,
+//   autoplay: true,
+//   responsive: {
+//     0: {
+//       items: 1
+//     },
+//     600: {
+//       items: 3
+//     },
+//     1000: {
+//       items: 5
+//     }
+//   }
+// });

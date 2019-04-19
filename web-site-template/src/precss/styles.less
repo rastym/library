@@ -610,4 +610,79 @@ main {
       }
     }
   }
+
+  & .e__resources {
+    background: #ece6de;
+    padding: 50px 0;
+    overflow: auto;
+    & h2 {
+      margin: 10px 0 20px;
+      color: #000;
+      text-align: center;
+    }
+
+    & .items {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      & .item {
+        border: solid 3px #ecaf69;
+      }
+    }
+  }
+}
+
+//////////////////////////////////FOOTER////////////////////////////////////////////////////////
+footer {
+  background: url("../img/background_dark.png");
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  & address {
+    width: 100%;
+    max-width: 400px;
+    padding: 34px 0 47px;
+    margin: 30px 0;
+    background: rgba(236, 175, 105, 0.4);
+    text-align: center;
+    & i,
+    p {
+      color: #fff;
+      text-align: center;
+      font-size: 37px;
+      line-height: 37px;
+      font: 700 15px/22px "Open Sans", sans-serif;
+    }
+
+    & p {
+      margin: 10px 0;
+    }
+
+    & p:first-of-type {
+      margin-bottom: 35px;
+    }
+
+    & i {
+      font-size: 30px;
+    }
+  }
+
+  & .social__networks {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    & a {
+      margin: 0 20px;
+      & i {
+        font-size: 40px;
+        line-height: 40px;
+        color: #fff;
+      }
+    }
+  }
 }
