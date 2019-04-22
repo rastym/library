@@ -67,7 +67,6 @@ header .bottom_overlay h2 {
   margin-top: -148px;
   text-align: center;
   color: #fff;
-  text-shadow: 2px 2px #000000;
   font-size: 60px;
 }
 
@@ -153,7 +152,6 @@ nav {
   text-decoration: none;
   color: #fff;
   font-weight: 700;
-  text-shadow: 0px 3px 5px #000;
 }
 
 #cssmenu > ul > li:hover > a,
@@ -424,6 +422,78 @@ main .e__resources .items .item {
   border: solid 3px #ecaf69;
 }
 
+main .popular__books {
+  background: #ece6de;
+  padding: 45px 0;
+}
+
+main .popular__books > .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+main .popular__books__left {
+  display: flex;
+  max-width: 50%;
+  padding-right: 30px;
+  background: #fff;
+}
+
+main .popular__books__left-img {
+  padding: 30px;
+}
+
+main .popular__books__left-article {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+main .popular__books__left-article h3 {
+  color: #333;
+  margin-top: 26px;
+  font-size: 24px;
+}
+
+main .popular__books__left-article span {
+  color: #ecaf69;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+main .popular__books__left-article p {
+  margin-top: 25px;
+}
+
+main .popular__books__left-article a {
+  margin-top: auto;
+  color: #ecaf69;
+  display: inline-block;
+}
+
+main .popular__books__right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 48%;
+}
+
+main .popular__books__right-img {
+  overflow: hidden;
+}
+
+main .popular__books__right-img a {
+  display: block;
+  position: relative;
+}
+
+main .popular__books__right-img a img {
+  width: 145px;
+  height: 186px;
+  border: solid 10px #fff;
+}
+
 footer {
   background: url("../img/background_dark.png");
   display: flex;
@@ -431,6 +501,7 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 0 0 15px 0;
 }
 
 footer address {
@@ -477,6 +548,22 @@ footer .social__networks a i {
   font-size: 40px;
   line-height: 40px;
   color: #fff;
+}
+
+footer .social__networks .fa-facebook:hover {
+  color: #3c5a99;
+  transition: 0.2s ease-in-out;
+}
+
+footer .social__networks .fa-instagram:hover {
+  color: #e1306c;
+  transition: 0.2s ease-in-out;
+}
+
+footer .copyright {
+  font-size: 14px;
+  color: #fff;
+  margin: 25px 0;
 }
 
 @media screen and (max-width: 1000px) {
@@ -737,6 +824,36 @@ footer .social__networks a i {
     padding-left: undefined;
     padding-right: undefined;
   }
+
+  main .popular__books__left {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+
+  main .popular__books__left-article h3 {
+    text-align: center;
+  }
+
+  main .popular__books__left-article span {
+    text-align: center;
+  }
+
+  main .popular__books__left-article p {
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  main .popular__books__left-article a {
+    text-align: right;
+    margin-top: 15px;
+    padding-right: 15px;
+  }
+
+  main .popular__books__right-img {
+    width: 50%;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 830px) {
@@ -811,12 +928,44 @@ footer .social__networks a i {
   main .news .content .owl-carousel .news__item .news__article p {
     margin-bottom: 15px;
   }
+
+  main .popular__books > .wrapper {
+    flex-wrap: wrap;
+  }
+
+  main .popular__books__left {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  main .popular__books__left-img img {
+    max-height: 280px;
+  }
+
+  main .popular__books__left-article h3 {
+    margin-top: 0;
+  }
+
+  main .popular__books__right {
+    max-width: 80%;
+    margin: 25px auto;
+    justify-content: center;
+  }
+
+  main .popular__books__right-img {
+    width: auto;
+    margin: 3px 5px;
+  }
 }
 
 @media screen and (max-width: 560px) {
   .wrapper {
     padding-left: undefined;
     padding-right: undefined;
+  }
+
+  main .popular__books__left {
+    max-width: 100%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
