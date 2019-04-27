@@ -1,5 +1,6 @@
 @import "project.less";
 @import "smart-grid.less";
+@import url(https://fonts.googleapis.com/css?family=Oswald);
 
 .wrapper {
   .wrapper();
@@ -603,6 +604,14 @@ main {
           & .news__date {
             flex-basis: 140px;
             text-align: center;
+
+            span {
+              font-size: 36px;
+            }
+
+            h5 {
+              font-size: 16px;
+            }
           }
         }
       }
@@ -610,23 +619,86 @@ main {
   }
 
   & .e__resources {
-    background: #ece6de;
     padding: 50px 0;
     overflow: auto;
+    background-color: #756213;
+    background-image: linear-gradient(315deg, #756213 0%, #000000 74%);
+
     & h2 {
       margin: 10px 0 20px;
-      color: #000;
+      color: #fff;
       text-align: center;
     }
 
-    & .items {
-      max-width: 700px;
-      margin: 0 auto;
+    &__links {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      justify-content: space-between;
-      & .item {
-        border: solid 3px #ecaf69;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 4;
+
+      .link {
+        box-sizing: content-box;
+        font-family: "Oswald", Arial, sans-serif;
+        display: inline-block;
+        vertical-align: top;
+        width: 200px;
+        height: 34px;
+        line-height: 36px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        letter-spacing: 0.1em;
+        text-align: center;
+        font-size: 0.8rem;
+        margin: 10px;
+        position: relative;
+      }
+      .link span {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .wipe {
+        border: 2px solid #fff;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .wipe {
+        -webkit-transition: color 0.3s ease-out;
+        transition: color 0.3s ease-out;
+      }
+      .wipe::after {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: #fff;
+        content: " ";
+        position: absolute;
+        top: 0;
+        -webkit-transition: -webkit-transform 0.2s
+          cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: -webkit-transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1),
+          -webkit-transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translateY(34px);
+        transform: translateY(34px);
+        z-index: -1;
+      }
+      .wipe:hover {
+        color: #124a58;
+      }
+      .wipe:hover::after {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
       }
     }
   }
@@ -634,6 +706,13 @@ main {
   & .popular__books {
     background: #ece6de;
     padding: 45px 0;
+
+    & h2 {
+      text-align: center;
+      margin-top: -20px;
+      margin-bottom: 25px;
+      color: #000;
+    }
 
     & > .wrapper {
       display: flex;
