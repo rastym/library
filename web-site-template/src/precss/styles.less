@@ -1,6 +1,10 @@
 @import "project.less";
 @import "smart-grid.less";
-@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+// @import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400");
 
 .wrapper {
   .wrapper();
@@ -13,22 +17,23 @@
 body {
   position: relative;
   box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
 }
 
 h1 {
   color: #ffffff;
   font-size: 24px;
-  font-family: sans-serif;
   text-transform: uppercase;
 }
 
 h2 {
   color: #fff;
-  font: 300 50px/50px "Open Sans", sans-serif;
+  font: 300 50px/50px "PT Sans";
+  text-transform: uppercase;
 }
 
 h4 {
-  font-size: 15px;
+  font-size: 18px;
   color: #777;
 }
 
@@ -53,7 +58,7 @@ header {
     z-index: 45;
     padding-bottom: 5px;
     margin-bottom: 2px;
-    background: rgba(34, 34, 34, 0.6);
+    background: rgba(34, 34, 34, 0.4);
   }
 
   .bottom_overlay {
@@ -61,7 +66,7 @@ header {
     min-height: 100%;
     z-index: 5;
     padding-bottom: 5px;
-    background: rgba(34, 34, 34, 0.6);
+    background: rgba(34, 34, 34, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,19 +75,21 @@ header {
       margin-top: -148px;
       text-align: center;
       color: #fff;
-      font-size: 60px;
+      letter-spacing: 1px;
+      font-family: "Roboto", sans-serif;
     }
   }
 
   & .library_name {
     z-index: 4;
     padding: 35px 0;
-    font-size: 36px;
-    text-align: center;
 
     & h1 {
       z-index: 4;
       text-shadow: 0px 3px 5px #000;
+      text-align: center;
+      font-family: "Roboto Slab", serif;
+      letter-spacing: 4.5px;
     }
   }
 }
@@ -144,12 +151,14 @@ nav {
 }
 #cssmenu > ul > li > a {
   padding: 17px;
-  font-size: 12px;
-  letter-spacing: 1px;
+  font-size: 15px;
+  letter-spacing: 0.6px;
   text-decoration: none;
   color: #fff;
-  font-weight: 700;
+  font-family: inherit;
+  font-weight: 400;
 }
+
 #cssmenu > ul > li:hover > a,
 #cssmenu ul li.active a {
   color: #fff;
@@ -175,6 +184,8 @@ nav {
   display: block;
   background: #ddd;
   content: "";
+
+  .lg-block({display: none;});
 }
 #cssmenu > ul > li.has-sub > a:before {
   position: absolute;
@@ -516,14 +527,14 @@ main {
         & .item__info {
           margin-left: 5px;
           & h4 {
-            font-size: 15px;
+            font-size: 18px;
             color: #777;
             margin-bottom: 5px;
             .sm-block({text-align: center; margin: 10px 0;});
           }
 
           & p {
-            font-size: 15px;
+            font-size: 16px;
             font-family: sans-serif;
             color: #777;
             margin-top: 5px;
@@ -569,7 +580,7 @@ main {
           display: flex;
           flex: wrap;
           align-items: center;
-          padding: 24px 52px 23px 30px;
+          padding: 24px 30px 23px 30px;
           background: #fff;
           height: 170px;
 
@@ -589,10 +600,13 @@ main {
           & .news__article {
             flex-basis: 700px;
             border-right: 1px solid #444;
+            padding-right: 5px;
 
             .sm-block({border-right: none});
 
             & h4 {
+              color: #777;
+              margin: 5px 0;
               .sm-block({text-align: center; margin: 10px 0;});
             }
 
@@ -607,10 +621,15 @@ main {
 
             span {
               font-size: 36px;
+              font-family: "Roboto";
+              font-size: 50px;
+              font-weight: 300;
             }
 
             h5 {
-              font-size: 16px;
+              font-family: "Roboto";
+              font-size: 18px;
+              font-weight: 300;
             }
           }
         }
@@ -805,7 +824,8 @@ main {
 
 //////////////////////////////////FOOTER////////////////////////////////////////////////////////
 footer {
-  background: url("../img/background_dark.png");
+  background: url("../img/footer_bg.jpg");
+  background-position: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -818,7 +838,7 @@ footer {
     max-width: 400px;
     padding: 34px 0 47px;
     margin: 30px 0;
-    background: rgba(236, 175, 105, 0.4);
+    background: rgba(236, 175, 105, 0.3);
     text-align: center;
     & i,
     p {

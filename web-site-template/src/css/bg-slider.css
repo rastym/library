@@ -6,15 +6,15 @@
   padding: 0px;
 }
 .slItems > div:nth-child(1) {
-  background-image: url("../img/header_bg.jpg");
+  background-image: url("../img/header_slider_1.jpg");
 }
 
 .slItems > div:nth-child(2) {
-  background-image: url(../img/bg2.jpg);
+  background-image: url("../img/header_slider_2.jpg");
 }
 
 .slItems > div:nth-child(3) {
-  background-image: url(../img/bg3.jpg);
+  background-image: url("../img/header_slider_3.jpg");
 }
 .slider {
   width: 100%;
