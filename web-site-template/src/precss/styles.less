@@ -92,7 +92,64 @@ header {
       letter-spacing: 4.5px;
     }
   }
+
+  #header_scroll {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 35;
+
+    h1 {
+      margin-top: -20px;
+    }
+
+    a span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      margin-left: -12px;
+      border-left: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-animation: header_scroll 1.5s infinite;
+      animation: header_scroll 1.5s infinite;
+      box-sizing: border-box;
+    }
+  }
+
+  @-webkit-keyframes header_scroll {
+    0% {
+      -webkit-transform: rotate(-45deg) translate(0, 0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes header_scroll {
+    0% {
+      transform: rotate(-45deg) translate(0, 0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(-45deg) translate(-20px, 20px);
+      opacity: 0;
+    }
+  }
 }
+
 .logo {
   position: relative;
   z-index: 123;
@@ -285,7 +342,7 @@ nav {
 
 @media screen and (max-width: 1000px) {
   #cssmenu .main-menu {
-    display: block;
+    display: none;
     background: #333;
   }
   .logo {
@@ -438,8 +495,8 @@ nav {
     top: 0;
     display: block;
     border-left: 1px solid #444;
-    height: 46px;
-    width: 46px;
+    height: 49px;
+    width: 49px;
     cursor: pointer;
   }
   #cssmenu .submenu-button.submenu-opened {
@@ -598,6 +655,7 @@ main {
           }
 
           & .news__article {
+            min-height: 130px;
             flex-basis: 700px;
             border-right: 1px solid #444;
             padding-right: 5px;
@@ -611,7 +669,16 @@ main {
             }
 
             & p {
+              margin-bottom: 10px;
               .sm-block({margin-bottom: 15px;});
+            }
+
+            & a {
+              color: #ecaf69;
+
+              &:hover {
+                border-bottom: 1px solid #ecaf69;
+              }
             }
           }
 

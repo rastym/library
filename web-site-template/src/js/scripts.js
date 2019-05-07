@@ -13,6 +13,7 @@
         .find(".button")
         .on("click", function() {
           $(this).toggleClass("menu-opened");
+          console.log(this);
           var mainmenu = $(this).next("ul");
           if (mainmenu.hasClass("open")) {
             mainmenu.slideToggle().removeClass("open");
@@ -109,6 +110,15 @@ var owl = $(".owl-one").owlCarousel({
     }
   },
   smartSpeed: 500
+});
+
+$("a[href='#about']").on("click", function(e) {
+  e.preventDefault();
+  $("html, body").animate(
+    { scrollTop: $($(this).attr("href")).offset().top },
+    500,
+    "linear"
+  );
 });
 
 // $("#carousel").owlCarousel({
