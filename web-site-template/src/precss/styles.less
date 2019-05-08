@@ -1,4 +1,3 @@
-@import "project.less";
 @import "smart-grid.less";
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 @import url("https://fonts.googleapis.com/css?family=PT+Sans");
@@ -30,6 +29,8 @@ h2 {
   color: #fff;
   font: 300 50px/50px "PT Sans";
   text-transform: uppercase;
+
+  .sm-block({font: 300 30px/30px "PT Sans" ;});
 }
 
 h4 {
@@ -167,9 +168,26 @@ nav {
   margin: 0 auto;
 }
 
-#cssmenu .main-menu {
-  display: flex;
-  justify-content: center;
+#cssmenu {
+  .main-menu {
+    display: flex;
+    justify-content: center;
+  }
+
+  & ul,
+  & ul li,
+  & ul li a,
+  & #head-mobile {
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 4;
+  }
 }
 
 #cssmenu,
@@ -549,9 +567,6 @@ nav {
   }
 }
 
-.xer {
-  height: 500px;
-}
 /* MAIN --------------------------------------------------- */
 main {
   & .about {
@@ -561,11 +576,11 @@ main {
     z-index: 40;
     position: relative;
 
+    .sm-block({padding-bottom: 0;});
     & h2 {
       color: #000;
       margin: 80px 0 35px 0;
       text-align: center;
-      font: 300 50px/50px "Open Sans", sans-serif;
       text-transform: uppercase;
 
       .sm-block({font: 300 40px/40px "Open Sans", sans-serif;});
@@ -584,8 +599,6 @@ main {
         & .item__info {
           margin-left: 5px;
           & h4 {
-            font-size: 18px;
-            color: #777;
             margin-bottom: 5px;
             .sm-block({text-align: center; margin: 10px 0;});
           }
@@ -660,10 +673,9 @@ main {
             border-right: 1px solid #444;
             padding-right: 5px;
 
-            .sm-block({border-right: none});
+            .sm-block({border-right: none; text-align: center;});
 
             & h4 {
-              color: #777;
               margin: 5px 0;
               .sm-block({text-align: center; margin: 10px 0;});
             }
@@ -675,14 +687,26 @@ main {
 
             & a {
               color: #ecaf69;
+              display: inline-block;
+              text-decoration: none;
 
-              &:hover {
-                border-bottom: 1px solid #ecaf69;
+              &::after {
+                content: "";
+                display: block;
+                width: 0;
+                height: 2px;
+                background: #ecaf69;
+                transition: width 0.3s;
+              }
+
+              &:hover::after {
+                width: 102%;
+                transition: width 0.3s;
               }
             }
           }
 
-          & .news__date {
+          .news__date {
             flex-basis: 140px;
             text-align: center;
 
@@ -866,7 +890,9 @@ main {
       align-items: center;
       max-width: 48%;
 
-      .sm-block({max-width: 80%; margin: 25px auto;justify-content: center;});
+      .sm-block(
+        {max-width: 100%; margin: 25px auto;justify-content: space-between;}
+      );
 
       &-img {
         overflow: hidden;

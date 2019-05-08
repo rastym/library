@@ -177,6 +177,21 @@ nav {
   justify-content: center;
 }
 
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a,
+#cssmenu #head-mobile {
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 4;
+}
+
 #cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
@@ -365,10 +380,6 @@ nav {
   border-top: 1px solid #333;
 }
 
-.xer {
-  height: 500px;
-}
-
 /* MAIN --------------------------------------------------- */
 
 main .about {
@@ -383,7 +394,6 @@ main .about h2 {
   color: #000;
   margin: 80px 0 35px 0;
   text-align: center;
-  font: 300 50px/50px "Open Sans", sans-serif;
   text-transform: uppercase;
 }
 
@@ -401,8 +411,6 @@ main .about__items__item .item__info {
 }
 
 main .about__items__item .item__info h4 {
-  font-size: 18px;
-  color: #777;
   margin-bottom: 5px;
 }
 
@@ -468,7 +476,6 @@ main .news .content .owl-carousel .news__item .news__article {
 }
 
 main .news .content .owl-carousel .news__item .news__article h4 {
-  color: #777;
   margin: 5px 0;
 }
 
@@ -478,10 +485,22 @@ main .news .content .owl-carousel .news__item .news__article p {
 
 main .news .content .owl-carousel .news__item .news__article a {
   color: #ecaf69;
+  display: inline-block;
+  text-decoration: none;
 }
 
-main .news .content .owl-carousel .news__item .news__article a:hover {
-  border-bottom: 1px solid #ecaf69;
+main .news .content .owl-carousel .news__item .news__article a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ecaf69;
+  transition: width 0.3s;
+}
+
+main .news .content .owl-carousel .news__item .news__article a:hover::after {
+  width: 102%;
+  transition: width 0.3s;
 }
 
 main .news .content .owl-carousel .news__item .news__date {
@@ -1048,6 +1067,14 @@ footer .copyright {
     padding-right: 15px;
   }
 
+  h2 {
+    font: 300 30px/30px "PT Sans";
+  }
+
+  main .about {
+    padding-bottom: 0;
+  }
+
   main .about h2 {
     font: 300 40px/40px "Open Sans", sans-serif;
   }
@@ -1097,6 +1124,7 @@ footer .copyright {
 
   main .news .content .owl-carousel .news__item .news__article {
     border-right: none;
+    text-align: center;
   }
 
   main .news .content .owl-carousel .news__item .news__article h4 {
@@ -1126,9 +1154,9 @@ footer .copyright {
   }
 
   main .popular__books__right {
-    max-width: 80%;
+    max-width: 100%;
     margin: 25px auto;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   main .popular__books__right-img {
