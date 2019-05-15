@@ -13,7 +13,6 @@
         .find(".button")
         .on("click", function() {
           $(this).toggleClass("menu-opened");
-          console.log(this);
           var mainmenu = $(this).next("ul");
           if (mainmenu.hasClass("open")) {
             mainmenu.slideToggle().removeClass("open");
@@ -58,7 +57,7 @@
         var mediasize = 1000;
         var button = cssmenu.find(".button");
         if (window.innerWidth > mediasize) {
-          cssmenu.find("ul").show();
+          cssmenu.find("ul").css("display", "");
         }
         if (window.innerWidth <= mediasize && !button.hasClass("menu-opened")) {
           cssmenu.find("ul").hide();

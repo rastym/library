@@ -233,7 +233,7 @@ nav {
 
 #cssmenu > ul > li > a {
   padding: 17px;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 0.6px;
   text-decoration: none;
   color: #fff;
@@ -250,7 +250,7 @@ nav {
 #cssmenu ul li.active:hover,
 #cssmenu ul li.active,
 #cssmenu ul li.has-sub.active:hover {
-  background: #448d00 !important;
+  background: #ecaf69 !important;
   -webkit-transition: background 0.3s ease;
   -ms-transition: background 0.3s ease;
   transition: background 0.3s ease;
@@ -258,36 +258,6 @@ nav {
 
 #cssmenu > ul > li.has-sub > a {
   padding-right: 30px;
-}
-
-#cssmenu > ul > li.has-sub > a:after {
-  position: absolute;
-  top: 22px;
-  right: 11px;
-  width: 8px;
-  height: 2px;
-  display: block;
-  background: #ddd;
-  content: "";
-}
-
-#cssmenu > ul > li.has-sub > a:before {
-  position: absolute;
-  top: 19px;
-  right: 14px;
-  display: block;
-  width: 2px;
-  height: 8px;
-  background: #ddd;
-  content: "";
-  -webkit-transition: all 0.25s ease;
-  -ms-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-}
-
-#cssmenu > ul > li.has-sub:hover > a:before {
-  top: 23px;
-  height: 0;
 }
 
 #cssmenu ul ul {
@@ -320,7 +290,7 @@ nav {
   border-bottom: 1px solid rgba(150, 150, 150, 0.15);
   padding: 11px 15px;
   width: 170px;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
   color: #ddd;
   font-weight: 400;
@@ -771,7 +741,33 @@ footer .copyright {
   }
 
   #cssmenu > ul > li.has-sub > a:after {
-    display: none;
+    position: absolute;
+    top: 22px;
+    right: 11px;
+    width: 8px;
+    height: 2px;
+    display: block;
+    background: #ddd;
+    content: "";
+  }
+
+  #cssmenu > ul > li.has-sub > a:before {
+    position: absolute;
+    top: 19px;
+    right: 14px;
+    display: block;
+    width: 2px;
+    height: 8px;
+    background: #ddd;
+    content: "";
+    -webkit-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+
+  #cssmenu > ul > li.has-sub:hover > a:before {
+    top: 23px;
+    height: 0;
   }
 
   #cssmenu .main-menu {
@@ -1017,6 +1013,16 @@ footer .copyright {
   }
 }
 
+@media screen and (max-width: 1000px) and screen and (max-width: 1000px) {
+  #cssmenu > ul > li.has-sub > a:after {
+    display: none;
+  }
+
+  #cssmenu > ul > li.has-sub > a:before {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .wrapper {
     padding-left: undefined;
@@ -1095,6 +1101,7 @@ footer .copyright {
 
   main .news {
     height: 550px;
+    overflow: hidden;
   }
 
   main .news .parallax-window {
@@ -1173,6 +1180,17 @@ footer .copyright {
 
   main .popular__books__left {
     max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .wrapper {
+    padding-left: undefined;
+    padding-right: undefined;
+  }
+
+  main .popular__books__right {
+    justify-content: center;
   }
 }
 /*# sourceMappingURL=styles.css.map */
