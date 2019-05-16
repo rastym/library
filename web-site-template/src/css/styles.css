@@ -36,6 +36,10 @@ h4 {
   color: #777;
 }
 
+.bg1 {
+  background-color: #ece6de;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -44,7 +48,6 @@ h4 {
 
 body {
   background: #262626;
-  height: 2000px;
 }
 
 header {
@@ -151,6 +154,13 @@ header #header_scroll a span {
     transform: rotate(-45deg) translate(-20px, 20px);
     opacity: 0;
   }
+}
+
+.header-mod {
+  height: auto;
+  background: url("../img/header_slider_2.jpg");
+  background-position: center top;
+  overflow: initial;
 }
 
 .logo {
@@ -373,7 +383,7 @@ main .about__items__item {
 }
 
 main .about__items__item .item__image {
-  width: 170px;
+  min-width: 130px;
 }
 
 main .about__items__item .item__info {
@@ -419,7 +429,7 @@ main .news .content {
   max-height: 450px;
 }
 
-main .news .content .owl-carousel .news__item {
+main .news .content .news__item {
   display: flex;
   flex: wrap;
   align-items: center;
@@ -428,38 +438,38 @@ main .news .content .owl-carousel .news__item {
   height: 170px;
 }
 
-main .news .content .owl-carousel .news__item .news__image {
+main .news .content .news__item .news__image {
   margin: 0 40px 0 20px;
   flex-basis: 150px;
 }
 
-main .news .content .owl-carousel .news__item .news__image img {
+main .news .content .news__item .news__image img {
   max-height: 130px;
   max-width: 130px;
 }
 
-main .news .content .owl-carousel .news__item .news__article {
+main .news .content .news__item .news__article {
   min-height: 130px;
   flex-basis: 700px;
   border-right: 1px solid #444;
   padding-right: 5px;
 }
 
-main .news .content .owl-carousel .news__item .news__article h4 {
+main .news .content .news__item .news__article h4 {
   margin: 5px 0;
 }
 
-main .news .content .owl-carousel .news__item .news__article p {
+main .news .content .news__item .news__article p {
   margin-bottom: 10px;
 }
 
-main .news .content .owl-carousel .news__item .news__article a {
+main .news .content .news__item .news__article a {
   color: #ecaf69;
   display: inline-block;
   text-decoration: none;
 }
 
-main .news .content .owl-carousel .news__item .news__article a::after {
+main .news .content .news__item .news__article a::after {
   content: "";
   display: block;
   width: 0;
@@ -468,27 +478,46 @@ main .news .content .owl-carousel .news__item .news__article a::after {
   transition: width 0.3s;
 }
 
-main .news .content .owl-carousel .news__item .news__article a:hover::after {
+main .news .content .news__item .news__article a:hover::after {
   width: 102%;
   transition: width 0.3s;
 }
 
-main .news .content .owl-carousel .news__item .news__date {
+main .news .content .news__item .news__date {
   flex-basis: 140px;
   text-align: center;
 }
 
-main .news .content .owl-carousel .news__item .news__date span {
+main .news .content .news__item .news__date span {
   font-size: 36px;
   font-family: "Roboto";
   font-size: 50px;
   font-weight: 300;
 }
 
-main .news .content .owl-carousel .news__item .news__date h5 {
+main .news .content .news__item .news__date h5 {
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 300;
+}
+
+main .news.news-page {
+  height: auto;
+}
+
+main .news.news-page .content {
+  height: auto;
+  max-height: none;
+}
+
+main .news.news-page .content .news__item {
+  margin: 30px 0;
+  min-height: 170px;
+  height: auto;
+}
+
+main .news.news-page .content .news__item .news__date {
+  flex-grow: 1;
 }
 
 main .e__resources {
@@ -1113,33 +1142,33 @@ footer .copyright {
     margin-top: 20px;
   }
 
-  main .news .content .owl-carousel .news__item {
+  main .news .content .news__item {
     display: block;
     height: auto;
     padding: 15px;
   }
 
-  main .news .content .owl-carousel .news__item .news__image {
+  main .news .content .news__item .news__image {
     margin: 0;
     flex-basis: 0;
     text-align: center;
   }
 
-  main .news .content .owl-carousel .news__item .news__image img {
+  main .news .content .news__item .news__image img {
     margin: 0 auto;
   }
 
-  main .news .content .owl-carousel .news__item .news__article {
+  main .news .content .news__item .news__article {
     border-right: none;
     text-align: center;
   }
 
-  main .news .content .owl-carousel .news__item .news__article h4 {
+  main .news .content .news__item .news__article h4 {
     text-align: center;
     margin: 10px 0;
   }
 
-  main .news .content .owl-carousel .news__item .news__article p {
+  main .news .content .news__item .news__article p {
     margin-bottom: 15px;
   }
 
